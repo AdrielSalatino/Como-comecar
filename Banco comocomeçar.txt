@@ -1,0 +1,157 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Tempo de geração: 18-Mar-2021 às 02:27
+-- Versão do servidor: 10.3.16-MariaDB
+-- versão do PHP: 7.3.23
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Banco de dados: `id6853421_banco_pessoas`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `empreendimento`
+--
+
+CREATE TABLE `empreendimento` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `ramo` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `negocio` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `valor` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `consumidor` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `operacao` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `estrategico` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `economico` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `tipo` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `porte` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `regime` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `usuario_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `empreendimento`
+--
+
+INSERT INTO `empreendimento` (`id`, `nome`, `ramo`, `negocio`, `valor`, `consumidor`, `operacao`, `estrategico`, `economico`, `tipo`, `porte`, `regime`, `usuario_id`) VALUES
+(4, 'Transportes Rodrigo', 'Veículos', 'Negócio de transportes', 'Transporte valor', 'Transporte Consumidor', 'Transporte operação', 'Transporte estratégico', 'Transporte econômico', 'Microempreendedor individual(MEI)', 'Microempresa (ME)', 'Simples Nacional', 5),
+(5, 'Equilibra', 'Beleza', 'Homossesual', '2000', 'Bonito', 'Ativo', 'Transante', 'Academia equilibra', 'Empresa Individual de Responsabilidade Limitada (Eireli)', 'Microempresa (ME)', 'Simples Nacional', 2),
+(6, 'Lan house da Ritter', 'Economia', 'Fornecer serviços de informática para população do bairro local', 'Fornecer a melhor internet do bairro para a comunidade', 'A lan house será localizada no bairro Teresópolis, irá funcionar todos os dias da semana durante 24h.', 'Será disponibilizados computadores por apenas 4 reais a hora de uso.', 'A lan house tem o objetivo de fornecer internet de boa qualidade e de conexão instável para seus usuários.', 'Tem como modelo econômico a cobrança por hora de uso de determinado equipamento.', 'Microempreendedor individual(MEI)', 'Empresa de Pequeno Porte (EPP)', 'Lucro Presumido', 1),
+(9, 'Mercado', 'Mercearia e supermercados', 'Fornecer mercadoria de vários tipos ', 'Faturarar em cima de cada produto ', 'Interface através de pontos aonde ficam localizados os mercados', 'O cliente vem até a mercadoria', 'Atingir seus objetivos vendendo o máximo de produtos possiveis e através de promoções  ', 'Através da venda de mercadoria ', 'Sociedade Empresária Limitada (Ltda.)', 'Empresa de Pequeno Porte (EPP)', 'Simples Nacional', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `telefone` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `ramo` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `senha` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `email`, `telefone`, `ramo`, `senha`) VALUES
+(1, 'Adriel Salatino Ferreira', 'adrielferreira19971@gmail.com', '51997570303', 'Tecnologia', 'adriel681105'),
+(2, 'Bernardo Dill', 'bernardodill10@gmail.com', '519801968434535', 'Moveis e decora??o', '123456'),
+(3, 'lhgfds', 'kgs@mnbv.com', '123456789', 'Tecnologia', '12345'),
+(4, 'Bruna Oliveira da Rocha ', 'brunarocha@gmail.com', '5158745698', 'Economia', '12345'),
+(5, 'Rodrigo Ferreira Marques', 'rodrigoda47@gmail.com', '51997570303', 'Veículos', '681105'),
+(6, 'Teste1', 'teste1@gmail.com', '51997570303', 'Tecnologia', '123456');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `senha` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `telefone` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `ramo` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `telefone`, `ramo`) VALUES
+(13, 'Adriel Salatino Ferreira', 'adrielferreira19971@gmail.com', 'adriel681105', '51997570303', 'Tecnologia'),
+(14, 'Bernardo Dill', 'bernardodill10@gmail.com', '123456', '5198019685300000', 'Moveis e decoração'),
+(15, 'lhgfds', 'kgs@mnbv.com', '12345', '123456789', 'Tecnologia'),
+(16, 'Bruna Oliveira da Rocha ', 'brunarocha@gmail.com', '12345', '5158745698', 'Economia');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `empreendimento`
+--
+ALTER TABLE `empreendimento`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_empreendimento_usuario_idx` (`usuario_id`);
+
+--
+-- Índices para tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `empreendimento`
+--
+ALTER TABLE `empreendimento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `empreendimento`
+--
+ALTER TABLE `empreendimento`
+  ADD CONSTRAINT `fk_empreendimento_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
